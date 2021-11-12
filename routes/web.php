@@ -17,12 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+//Start Authenticated Routes
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', function() {
-    return view('home');
+//Define url localhost:8000/dashboard arahkan ke resources/views/admin/dashboard.blade.php
+Route::get('/dashboard', function() {
+    return view('admin.dashboard.index');
 })->name('home')->middleware('auth');
+
+//End Authenticated Routes
