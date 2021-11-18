@@ -34,4 +34,7 @@ Route::resource('carousels', 'App\Http\Controllers\CarouselController')->middlew
 //Roues untuk menu Kategori
 Route::resource('kategori', 'App\Http\Controllers\CategoryController')->middleware('auth');
 
+//Roues untuk menu Lokasi
+Route::resource('lokasi', 'App\Http\Controllers\LocationController')->middleware('auth');
+
 //End Authenticated Routes

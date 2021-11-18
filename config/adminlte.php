@@ -250,6 +250,12 @@ return [
             'url'  => '/kategori',
             'icon' => 'fas fa-fw fa-clipboard-list',
         ],
+        //lokasi
+        [
+            'text' => 'Lokasi',
+            'url'  => '/lokasi',
+            'icon' => 'fas fa-fw fa-map-marker-alt',
+        ],
         // [
         //     'text' => 'change_password',
         //     'url'  => 'admin/settings',
