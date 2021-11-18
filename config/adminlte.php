@@ -237,6 +237,12 @@ return [
             'url'  => '/dashboard',
             'icon' => 'fas fa-fw fa-tachometer-alt',
         ],
+        ['header' => 'MANAGE CONTENT'],
+        [
+            'text' => 'Carousel',
+            'url'  => '/carousels',
+            'icon' => 'fas fa-fw fa-images',
+        ],
         // [
         //     'text' => 'change_password',
         //     'url'  => 'admin/settings',

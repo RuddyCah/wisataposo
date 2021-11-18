@@ -26,4 +26,7 @@ Route::get('/dashboard', function() {
     return view('admin.dashboard.index');
 })->name('home')->middleware('auth');
 
+//Routes untuk menu Carousel
+Route::resource('carousels', 'App\Http\Controllers\CarouselController');
+
 //End Authenticated Routes
