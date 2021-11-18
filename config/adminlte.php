@@ -238,10 +238,17 @@ return [
             'icon' => 'fas fa-fw fa-tachometer-alt',
         ],
         ['header' => 'MANAGE CONTENT'],
+        //carousel
         [
             'text' => 'Carousel',
             'url'  => '/carousels',
             'icon' => 'fas fa-fw fa-images',
+        ],
+        //kategori
+        [
+            'text' => 'Kategori',
+            'url'  => '/kategori',
+            'icon' => 'fas fa-fw fa-clipboard-list',
         ],
         // [
         //     'text' => 'change_password',

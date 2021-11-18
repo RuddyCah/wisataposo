@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Edit Carousel')
+@section('title', 'Edit Kategori')
 
 @section('content_header')
-    <h1 class="m-0 text-dark">Edit Carousel</h1>
+    <h1 class="m-0 text-dark">Edit Kategori</h1>
 @stop
 
 @section('content')
@@ -17,8 +17,8 @@
             </ul>
         </div>
     @endif
-    {{-- route mengarah ke route bernama carousels (CarouselController) pada method bernama store --}}
-    <form action="{{route('carousels.update',$carousel->id)}}" method="post" enctype="multipart/form-data"> 
+    {{-- route mengarah ke route bernama kategori (CategoryController) pada method bernama update --}}
+    <form action="{{route('kategori.update',$category->id)}}" method="post" enctype="multipart/form-data"> 
         @csrf
         @method('put')
         <div class="row">
@@ -27,16 +27,21 @@
                     <div class="card-body">
 
                         <div class="form-group">
-                            <label for="inputImage">Pilih image</label>
-                            <input type="file" name="image" class="form-control" placeholder="image" id="inputImage">
-                            <img src="/image/{{ $carousel->image }}" width="300px">
+                            <label for="inputKategori">Nama Kategori</label>
+                            <input type="text" name="nama_kategori" class="form-control" placeholder="Nama kategori" id="inputKategori" value="{{ $category->kategori }}"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputImage">Pilih gambar</label>
+                            <input type="file" name="gambar" class="form-control" placeholder="gambar" id="inputImage">
+                            <img src="/image/{{ $category->gambar }}" width="300px">
                         </div>
 
                     </div>
 
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Simpan</button>
-                        <a href="{{route('carousels.index')}}" class="btn btn-default">
+                        <a href="{{route('kategori.index')}}" class="btn btn-default">
                             Batal
                         </a>
                     </div>

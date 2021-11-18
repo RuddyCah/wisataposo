@@ -27,6 +27,11 @@ Route::get('/dashboard', function() {
 })->name('home')->middleware('auth');
 
 //Routes untuk menu Carousel
-Route::resource('carousels', 'App\Http\Controllers\CarouselController');
+//->middleware('auth') mengharuskan user untuk login terlebih dahulu untuk membuka halaman/menu carousel
+//jika user belum login, dan tembak ke link menu carousel, maka akan dilempar ke halaman login
+Route::resource('carousels', 'App\Http\Controllers\CarouselController')->middleware('auth');
+
+//Roues untuk menu Kategori
+Route::resource('kategori', 'App\Http\Controllers\CategoryController')->middleware('auth');
 
 //End Authenticated Routes
