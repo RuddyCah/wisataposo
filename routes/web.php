@@ -37,4 +37,7 @@ Route::resource('kategori', 'App\Http\Controllers\CategoryController')->middlewa
 //Roues untuk menu Lokasi
 Route::resource('lokasi', 'App\Http\Controllers\LocationController')->middleware('auth');
 
+//Roues untuk menu Destinasi
+Route::resource('destinasi', 'App\Http\Controllers\DestinationController')->middleware('auth');
+
 //End Authenticated Routes

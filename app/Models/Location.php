@@ -10,4 +10,8 @@ class Location extends Model
     use HasFactory;
 
     protected $fillable = ['lokasi'];
+
+    public function destination(){
+        return $this->hasMany('App\Models\Destination');
+    }
 }

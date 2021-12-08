@@ -10,4 +10,8 @@ class Category extends Model
     use HasFactory;
 
     protected $fillable = ['kategori', 'gambar'];
+
+    public function destination(){
+        return $this->hasMany('App\Models\Destination');
+    }
 }

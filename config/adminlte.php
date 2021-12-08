@@ -256,6 +256,12 @@ return [
             'url'  => '/lokasi',
             'icon' => 'fas fa-fw fa-map-marker-alt',
         ],
+        //destinasi
+        [
+            'text' => 'Destinasi',
+            'url'  => '/destinasi',
+            'icon' => 'fas fa-fw fa-plane-arrival',
+        ],
         // [
         //     'text' => 'change_password',
         //     'url'  => 'admin/settings',
@@ -419,6 +425,21 @@ return [
                     'type' => 'js',
                     'asset' => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',
+                ],
+            ],
+        ],
+        'Summernote' => [
+            'active' => false,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/summernote/summernote-bs4.min.js',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'vendor/summernote/summernote-bs4.min.css',
                 ],
             ],
         ],
