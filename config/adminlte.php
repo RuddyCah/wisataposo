@@ -268,6 +268,12 @@ return [
             'url'  => '/event',
             'icon' => 'fas fa-fw fa-calendar-minus',
         ],
+        //Informasi Umum
+        [
+            'text' => 'Informasi Umum',
+            'url'  => '/informasi',
+            'icon' => 'fas fa-fw fa-info-circle',
+        ],
         // [
         //     'text' => 'change_password',
         //     'url'  => 'admin/settings',

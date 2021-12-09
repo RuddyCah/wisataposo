@@ -43,4 +43,7 @@ Route::resource('destinasi', 'App\Http\Controllers\DestinationController')->midd
 //Routes untuk menu Event
 Route::resource('event', 'App\Http\Controllers\EventController')->middleware('auth');
 
+//Routes untuk menu Informasi Umum
+Route::resource('informasi', 'App\Http\Controllers\InformationController')->middleware('auth');
+
 //End Authenticated Routes
