@@ -31,13 +31,16 @@ Route::get('/dashboard', function() {
 //jika user belum login, dan tembak ke link menu carousel, maka akan dilempar ke halaman login
 Route::resource('carousels', 'App\Http\Controllers\CarouselController')->middleware('auth');
 
-//Roues untuk menu Kategori
+//Routes untuk menu Kategori
 Route::resource('kategori', 'App\Http\Controllers\CategoryController')->middleware('auth');
 
-//Roues untuk menu Lokasi
+//Routes untuk menu Lokasi
 Route::resource('lokasi', 'App\Http\Controllers\LocationController')->middleware('auth');
 
-//Roues untuk menu Destinasi
+//Routes untuk menu Destinasi
 Route::resource('destinasi', 'App\Http\Controllers\DestinationController')->middleware('auth');
+
+//Routes untuk menu Event
+Route::resource('event', 'App\Http\Controllers\EventController')->middleware('auth');
 
 //End Authenticated Routes

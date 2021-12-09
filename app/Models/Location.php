@@ -14,4 +14,8 @@ class Location extends Model
     public function destination(){
         return $this->hasMany('App\Models\Destination');
     }
+
+    public function event(){
+        return $this->hasMany('App\Models\Event');
+    }
 }

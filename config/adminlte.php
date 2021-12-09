@@ -262,6 +262,12 @@ return [
             'url'  => '/destinasi',
             'icon' => 'fas fa-fw fa-plane-arrival',
         ],
+        //Event
+        [
+            'text' => 'Event',
+            'url'  => '/event',
+            'icon' => 'fas fa-fw fa-calendar-minus',
+        ],
         // [
         //     'text' => 'change_password',
         //     'url'  => 'admin/settings',

@@ -182,5 +182,6 @@ class DestinationController extends Controller
 
         //redirect ke method index
         return redirect()->route('destinasi.index')
-                         ->with('success', 'Destination deleted successfully');    }
+                         ->with('success', 'Destination deleted successfully');    
+    }
 }
