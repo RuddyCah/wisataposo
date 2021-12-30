@@ -47,7 +47,7 @@ class InformationController extends Controller
         $request->validate([
             'judul_informasi' => 'required',
             'deskripsi' => 'required',
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg'
         ]);
 
         //ambil inputan user, masukkan ke variabel $input. 

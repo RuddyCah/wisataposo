@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UserViewController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', [UserViewController::class, 'welcome'])->name('welcome');
+Route::post('/events', [UserViewController::class, 'event']);
 
 //Start Authenticated Routes
 Auth::routes();
@@ -47,3 +45,6 @@ Route::resource('event', 'App\Http\Controllers\EventController')->middleware('au
 Route::resource('informasi', 'App\Http\Controllers\InformationController')->middleware('auth');
 
 //End Authenticated Routes
+
+//Start General User Routes
+

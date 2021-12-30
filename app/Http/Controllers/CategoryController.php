@@ -46,7 +46,7 @@ class CategoryController extends Controller
         //validasi request
         $request->validate([
             'nama_kategori' => 'required',
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg'
         ]);
 
         //ambil inputan user, masukkan ke variabel $input. 

@@ -45,7 +45,7 @@ class CarouselController extends Controller
     {
         //validasi request
         $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg'
         ]);
 
         //ambil inputan user, simpan di variabel $input

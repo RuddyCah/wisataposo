@@ -53,7 +53,11 @@
                                     <label for="inputKategori">Kategori</label>
                                     <select class="form-control" id="inputKategori" name="nama_kategori">
                                         @foreach ($categories as $key => $category)
-                                            <option value="{{$category->id}}" selected="{{$category->id == $destination->kategori_id ? true : false}}">{{$category->kategori}}</option>
+                                            @if ($category->id == $destination->kategori_id)
+                                                <option value="{{$category->id}}" selected>{{$category->kategori}}</option>
+                                            @else
+                                                <option value="{{$category->id}}">{{$category->kategori}}</option>
+                                            @endif
                                         @endforeach
                                     </select>
                                 </div>
@@ -66,7 +70,12 @@
                                     <label for="inputLokasi">Lokasi</label>
                                     <select class="form-control" id="inputLokasi" name="nama_lokasi">
                                         @foreach ($locations as $key => $location)
-                                            <option value="{{$location->id}}" selected="{{$location->id == $destination->lokasi_id ? true : false}}">{{$location->lokasi}}</option>
+                                            @if ($location->id == $destination->lokasi_id)
+                                                <option value="{{$location->id}}" selected>{{$location->lokasi}}</option>
+                                            @else
+                                                <option value="{{$location->id}}">{{$location->lokasi}}</option> 
+                                            @endif
+                                            
                                         @endforeach
                                     </select>
                                 </div>

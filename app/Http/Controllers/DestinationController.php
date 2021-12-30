@@ -58,7 +58,7 @@ class DestinationController extends Controller
             'nama_lokasi' => 'required',
             'nama_destinasi' => 'required',
             'deskripsi' => 'required',
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg'
         ]);
 
         //ambil inputan user, masukkan ke variabel $input. 
