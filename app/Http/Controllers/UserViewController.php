@@ -36,15 +36,19 @@ class UserViewController extends Controller
 
     public function event(Request $request){
         $carousels = Carousel::all();
+
+        //Ambil lokasi id berdasarkan nama lokasi yang diinput user
         $location_id = Location::where('lokasi','LIKE','%'.$request->searchValue.'%')->get('id');
 
+        //Ambil event berdasarkan lokasi id
         $event = Event::select('*')->whereIn('lokasi_id', $location_id)->get();
 
         return view(
             'events',
             [
                 'events' => $event,
-                'carousels' => $carousels
+                'carousels' => $carousels,
+                'searchInput' => ucwords($request->searchValue) //ucwords() untuk ubah uppercase di huruf pertama
             ]
         );
     }

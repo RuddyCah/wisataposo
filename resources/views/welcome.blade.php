@@ -94,13 +94,13 @@
     
     <!-- START CATEGORY -->
     <div class="kategori-container p-5">
-      <div class="row">
+      <div class="row left-line">
         <div class="col-6">
           <h2 class="font-weight-bold mb-2 pb-3"><span>Category</span></h2>
         </div>
         <div class="d-flex justify-content-end button-slider col-6">
-          <a id="slideLeft" class="btn"><i class="fas fa-arrow-left"></i></a>
-          <a id="slideRight" class="btn"><i class="fas fa-arrow-right"></i></i></a>
+          <a id="slideLeft" class="btn" onclick="sliderKategoriClicked()"><i class="fas fa-arrow-left"></i></a>
+          <a id="slideRight" class="btn" onclick="sliderKategoriClicked()"><i class="fas fa-arrow-right"></i></i></a>
         </div>
       </div>
       <div class="kategori" id="kategori-slider">

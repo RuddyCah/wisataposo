@@ -22,5 +22,49 @@
       </div>
     </div>
     <!-- END CAROUSEL -->
+
+    <div class="container">
+      <!-- START BREADCRUMB -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Event</li>
+        </ol>
+      </nav>
+      <!-- START BREADCRUMB -->
+
+      <hr class="divider mt-0">
+
+      <!-- START TABLE EVENT -->
+      {{-- <div class="row left-line">
+        <div class="col-6">
+          <h2 class="font-weight-bold mb-2 pb-3 mb-5"><span>Event di {{$searchInput}}</span></h2>
+        </div>
+      </div> --}}
+      <h2 class="font-weight-bold mb-2 pb-5 text-center">Event di {{$searchInput}}</h2>
+      <table id="tabel-event" class="table table-striped table-bordered datatable" style="width:100%">
+        <thead>
+            <tr>
+              <th>Nama Event</th>
+              <th>Lokasi</th>
+              <th>Tanggal</th>
+              <th>Info</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($events as $key => $event)
+            <tr>
+              <td>{{$event->nama_event}}</td>
+              <td>{{$event->location->lokasi}}</td>
+              <td>{{$event->tanggal}}</td>
+              <td>{{$event->info}}</td>
+            </tr>
+            @endforeach
+        </tbody>
+      </table>
+
+
+      <hr class="divider">
+    </div>
 @endsection
       

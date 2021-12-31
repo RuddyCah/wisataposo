@@ -12,6 +12,7 @@
 
         <!-- Bootstrap core CSS -->
         <link href="{{ asset ('css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset ('css/dataTables.bootstrap5.min.css') }}" rel="stylesheet">
         <link href="{{ asset ('vendor/fontawesome-free/css/fontawesome.min.css') }}" rel="stylesheet">
         <link href="{{ asset ('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
 
@@ -36,7 +37,9 @@
 
         <script src="{{ asset ('vendor/jquery/jquery.min.js') }}"></script>
         <script src="{{ asset ('js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset ('js/jquery.dataTables.min.js') }}"></script>
+        <script src="{{ asset ('js/dataTables.bootstrap5.min.js') }}"></script>
         <script src="{{ asset ('js/app.js') }}"></script>
-
+        
     </body>
 </html>

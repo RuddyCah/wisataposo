@@ -238,17 +238,17 @@ nav ul li a:hover,
     border-bottom-left-radius: 3rem;
 }
 
-.kategori-container h2{
+.left-line h2{
     display: flex;
     align-items: center;
     justify-content: left;
 }
 
-.kategori-container h2 span {
+.left-line h2 span {
     margin: 0 15px;
 }
 
-.kategori-container h2:before{
+.left-line h2:before{
   background: rgb(109, 106, 106);
   height: 3px;
   flex: 0.1; /*atur panjang garis samping judul*/
@@ -319,6 +319,28 @@ nav ul li a:hover,
     border-radius: 0.5rem;
 }
 /* END BUTTON LIHAT SEMUA WISATA */
+
+
+/* START BREADCRUMB */
+.breadcrumb{
+  margin-top: -2.5rem;
+}
+
+.breadcrumb li{
+  font-weight: bold !important;
+}
+
+.breadcrumb > li + li:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f105 " !important; /* UBAH SEPARATOR PAKAI RIGHT ARROW */
+    padding-top: 2px;
+}
+/* 
+.breadcrumb li a{
+  color: black !important;
+} */
+/* END BREADCRUMB */
+
 
 /* START Footer */
 .footer-dark {
