@@ -16,7 +16,7 @@
                         <a class="nav-link" href="#">Inspirasi Perjalanan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Info Pariwisata</a>
+                        <a class="nav-link" href="{{url('/info-umum')}}" tabindex="-1" aria-disabled="true">Informasi Umum</a>
                     </li>
                     {{-- Search Icon --}}
                     <li class="nav-item d-flex">

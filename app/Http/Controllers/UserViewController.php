@@ -8,6 +8,7 @@ use App\Models\Destination;
 use App\Models\Category;
 use App\Models\Event;
 use App\Models\Location;
+use App\Models\Information;
 
 class UserViewController extends Controller
 {
@@ -25,7 +26,7 @@ class UserViewController extends Controller
 
         //return ke views/welcome.blade.php
         return view(
-            'welcome',
+            'user.welcome',
             [
                 'carousels' => $carousels,
                 'destinations' => $destinations,
@@ -44,11 +45,27 @@ class UserViewController extends Controller
         $event = Event::select('*')->whereIn('lokasi_id', $location_id)->get();
 
         return view(
-            'events',
+            'user.events',
             [
                 'events' => $event,
                 'carousels' => $carousels,
                 'searchInput' => ucwords($request->searchValue) //ucwords() untuk ubah uppercase di huruf pertama
+            ]
+        );
+    }
+
+    //Get Informasi Umum
+    public function informasi(){
+        $carousels = Carousel::all();
+
+        //Ambil semua data informasi umum
+        $informations = Information::all();
+
+        return view(
+            'user.informasi',
+            [
+                'informations' => $informations,
+                'carousels' => $carousels
             ]
         );
     }

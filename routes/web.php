@@ -12,11 +12,13 @@ use App\Http\Controllers\UserViewController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// Routes untuk user
 Route::get('/', [UserViewController::class, 'welcome'])->name('welcome');
-Route::post('/events', [UserViewController::class, 'event']);
+Route::post('/events', [UserViewController::class, 'event']); //post karena ada input user
+Route::get('/info-umum', [UserViewController::class, 'informasi']); //get karna hanya menampilkan data
 
 //Start Authenticated Routes
+// Routes untuk admin
 Auth::routes();
 
 //Define url localhost:8000/dashboard arahkan ke resources/views/admin/dashboard.blade.php
