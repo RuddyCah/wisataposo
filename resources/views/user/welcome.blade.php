@@ -67,7 +67,7 @@
             <div class="card shadow-sm border-0 rounded p-0">
               <a href="#">
                 <div class="card-body p-0">
-                  <img src="image/{{ $destination->gambar_judul }}" alt="" class="w-100 card-img-top"/>                        
+                  <img src="image/{{ $destination->gambar }}" alt="" class="w-100 card-img-top"/>                        
 
                   <div class="card-img-overlay p-0">
                     <div class="card-footer">

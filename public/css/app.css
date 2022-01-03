@@ -341,6 +341,39 @@ nav ul li a:hover,
 } */
 /* END BREADCRUMB */
 
+/* START HASIL PENCARIAN */
+#pencarian form{
+  position: relative;
+}
+#pencarian input{
+  height: 55px;
+  text-indent: 33px;
+  border-radius: 10px;
+}
+#pencarian .form-input:focus{
+  outline: none !important;
+  border: none;
+  box-shadow: 0 0 10px #7e7b52;
+}
+#pencarian .left-pan{
+  position: absolute;
+  right: 17px;
+  top: 13px;
+  padding: 2px;
+  border-left: 1px solid #d1d5db;
+  padding-left: 7px;
+}
+
+#pencarian .left-pan .fa{
+  padding-left: 10px;
+}
+
+#hasil-pencarian img{
+  height: 220px;
+  width: 300px;
+  margin-top: 0.5rem;
+}
+/* END HASIL PENCARIAN */
 
 /* START Footer */
 .footer-dark {

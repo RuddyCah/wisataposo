@@ -20,9 +20,10 @@
                     </li>
                     {{-- Search Icon --}}
                     <li class="nav-item d-flex">
-                        <form class="search-box">
-                        <input type="text" />
-                        <span></span>
+                        <form action="{{url('/pencarian')}}" method="get" class="search-box">
+                            @csrf
+                            <input type="text" name="navSearchValue"/>
+                            <span></span>
                         </form>
                             
                     </li>

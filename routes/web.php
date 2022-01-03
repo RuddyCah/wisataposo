@@ -16,6 +16,7 @@ use App\Http\Controllers\UserViewController;
 Route::get('/', [UserViewController::class, 'welcome'])->name('welcome');
 Route::post('/events', [UserViewController::class, 'event']); //post karena ada input user
 Route::get('/info-umum', [UserViewController::class, 'informasi']); //get karna hanya menampilkan data
+Route::get('/pencarian', [UserViewController::class, 'HasilPencarian']); //post karena ada input user
 
 //Start Authenticated Routes
 // Routes untuk admin

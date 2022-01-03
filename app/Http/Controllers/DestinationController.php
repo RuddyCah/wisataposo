@@ -78,7 +78,7 @@ class DestinationController extends Controller
             $image->move($destinationPath, $profileImage);
             $input['gambar'] = "$profileImage"; //value input image diisi dengan nama file yang dipindahkan
         }
-        $destination->gambar_judul = $input['gambar'];
+        $destination->gambar = $input['gambar'];
         $destination->judul = $input['nama_destinasi'];
         $destination->konten = $input['deskripsi'];
 
@@ -154,7 +154,7 @@ class DestinationController extends Controller
             $image->move($destinationPath, $profileImage);
             $input['gambar'] = "$profileImage";
 
-            $destination->gambar_judul = $input['gambar'];
+            $destination->gambar = $input['gambar'];
         }else{
             unset($input['image']);
         }

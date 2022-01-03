@@ -87,7 +87,7 @@
                                 <div class="form-group">
                                     <label for="inputGambar">Pilih gambar</label>
                                     <input type="file" name="gambar" class="form-control" placeholder="gambar" id="inputGambar">
-                                    <img src="/image/{{ $destination->gambar_judul }}" width="300px">
+                                    <img src="/image/{{ $destination->gambar }}" width="300px">
                                 </div>
                             </div>
                         </div>

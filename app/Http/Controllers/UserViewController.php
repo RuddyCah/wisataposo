@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\Event;
 use App\Models\Location;
 use App\Models\Information;
+use Illuminate\Database\Query\Builder;
 
 class UserViewController extends Controller
 {
@@ -66,6 +67,44 @@ class UserViewController extends Controller
             [
                 'informations' => $informations,
                 'carousels' => $carousels
+            ]
+        );
+    }
+
+    //Untuk menampilkan Hasil Pencarian dari Menu Navbar
+    //Hasil pencarian menampilkan data Destinasi Wisata dan Informasi Umum
+    //Hasil pencarian berdasarkan lokasi, kategori, judul, dan konten
+    public function HasilPencarian(Request $request){
+
+        $inputUser = $request->navSearchValue;
+
+        //Jika user mencari lokasi, Ambil lokasi id berdasarkan nama lokasi yang diinput user
+        $location_id = Location::where('lokasi','LIKE','%'.$inputUser.'%')->get('id');
+
+        //Jika user mencari kategori, Ambil kategori id berdasarkan nama kategori yang diinput user
+        $category_id = Category::where('kategori', 'LIKE', '%'.$inputUser.'%')->get('id');
+
+        //Ambil destinasi wisata
+        $destinations = Destination::select('judul','gambar','konten')
+                                                ->whereIn('lokasi_id', $location_id)
+                                                ->orWhereIn('kategori_id', $category_id)
+                                                ->orWhere('judul', 'LIKE', '%'.$inputUser.'%')
+                                                ->orWhere('konten', 'LIKE', '%'.$inputUser.'%');
+
+        //Ambil Informasi Umum
+        $informations = Information::select('judul','gambar','konten')->where('judul', 'LIKE', '%'.$inputUser.'%')
+                                                ->orWhere('konten', 'LIKE', '%'.$inputUser.'%');
+
+        //Gabungkan tabel destinasi dan informasi
+        $results = $destinations->union($informations)->paginate(2);
+
+        // return $results;
+
+        return view(
+            'user.search',
+            [
+                'results' => $results,
+                'searchInput' => ucwords($inputUser) //ucwords() untuk ubah uppercase di huruf pertama
             ]
         );
     }

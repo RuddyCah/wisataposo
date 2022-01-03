@@ -24,16 +24,19 @@
     </head>
 
     <body>
-        
-        @extends('layouts.header')
 
+        {{-- @extends('layouts.header') --}}
+        
+        
         <div id="app">
+            @include('layouts.header')  
             <main class="">
                 @yield('content')
             </main>
+            @include('layouts.footer')
         </div>
 
-        @extends('layouts.footer')
+        
 
         <script src="{{ asset ('vendor/jquery/jquery.min.js') }}"></script>
         <script src="{{ asset ('js/bootstrap.min.js') }}"></script>

@@ -38,7 +38,7 @@
                             <tr>
                                 <td>{{$key+1}}</td>
                                 <td>{{$destination->judul}}</td>
-                                <td><img src="/image/{{ $destination->gambar_judul }}" width="100px"></td>
+                                <td><img src="/image/{{ $destination->gambar }}" width="100px"></td>
                                 <td>{{$destination->location->lokasi}}</td>
                                 <td>{{$destination->category->kategori}}</td>
                                 <td>
