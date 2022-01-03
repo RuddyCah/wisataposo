@@ -13,7 +13,7 @@
                         <a class="nav-link" aria-current="page" href="{{url('/')}}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Inspirasi Perjalanan</a>
+                        <a class="nav-link" href="{{ url('/ide-liburan') }}">Ide Liburan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('/info-umum')}}" tabindex="-1" aria-disabled="true">Informasi Umum</a>

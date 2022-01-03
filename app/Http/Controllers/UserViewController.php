@@ -109,4 +109,19 @@ class UserViewController extends Controller
         );
     }
 
+    public function IdeLiburan(){
+        $carousels = Carousel::all();
+        $destinations = Destination::select('*')->limit(10)->get();
+
+        // return $results;
+
+        return view(
+            'user.ideliburan',
+            [
+                'destinations' => $destinations,
+                'carousels' => $carousels
+            ]
+        );
+    }
+
 }
