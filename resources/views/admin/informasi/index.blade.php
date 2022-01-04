@@ -21,7 +21,9 @@
                             <p>{{ $message }}</p>
                         </div>
                     @endif
-
+                    @php
+                        $count = ($informations->currentPage() - 1) * $informations->perPage() + 1 ;
+                    @endphp
                     <table class="table table-hover table-bordered table-stripped" id="dtInformasi">
                         <thead>
                         <tr>
@@ -34,7 +36,7 @@
                         <tbody>
                         @foreach($informations as $key => $information)
                             <tr>
-                                <td>{{$key+1}}</td>
+                                <td>{{$count++}}</td>
                                 <td>{{$information->judul}}</td>
                                 <td>{{$information->konten}}</td>
                                 <td>
@@ -49,7 +51,10 @@
                         @endforeach
                         </tbody>
                     </table>
-
+                    <!-- Pagination -->
+                    <div class="d-flex justify-content-center mt-3">
+                        {!! $informations->links() !!}
+                    </div> 
                 </div>
             </div>
         </div>

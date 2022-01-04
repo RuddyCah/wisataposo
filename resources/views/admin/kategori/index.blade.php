@@ -32,9 +32,12 @@
                         </tr>
                         </thead>
                         <tbody>
+                        @php
+                            $count = ($categories->currentPage() - 1) * $categories->perPage() + 1 ;
+                        @endphp
                         @foreach($categories as $key => $category)
                             <tr>
-                                <td>{{$key+1}}</td>
+                                <td>{{$count++}}</td>
                                 <td>{{$category->kategori}}</td>
                                 <td><img src="/image/{{ $category->gambar }}" width="100px"></td>
                                 <td>
@@ -49,7 +52,10 @@
                         @endforeach
                         </tbody>
                     </table>
-
+                    <!-- Pagination -->
+                    <div class="d-flex justify-content-center mt-3">
+                        {!! $categories->links() !!}
+                    </div> 
                 </div>
             </div>
         </div>

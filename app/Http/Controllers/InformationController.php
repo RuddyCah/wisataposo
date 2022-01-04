@@ -15,7 +15,7 @@ class InformationController extends Controller
     public function index()
     {
         //ambil data dari tabel lokasi
-        $informations = Information::all();
+        $informations = Information::select('*')->paginate(5);
 
         //return ke views/admin/lokasi/index.blade.php
         return view(

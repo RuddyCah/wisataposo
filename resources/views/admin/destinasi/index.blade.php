@@ -22,7 +22,7 @@
                         </div>
                     @endif
 
-                    <table class="table table-hover table-bordered table-stripped" id="dtDestinasi">
+                    <table class="table datatable table-hover table-bordered table-stripped" id="dtDestinasi">
                         <thead>
                         <tr>
                             <th>No.</th>
@@ -34,9 +34,12 @@
                         </tr>
                         </thead>
                         <tbody>
+                        @php
+                            $count = ($destinations->currentPage() - 1) * $destinations->perPage() + 1 ;
+                        @endphp
                         @foreach($destinations as $key => $destination)
                             <tr>
-                                <td>{{$key+1}}</td>
+                                <td>{{ $count++ }}</td>
                                 <td>{{$destination->judul}}</td>
                                 <td><img src="/image/{{ $destination->gambar }}" width="100px"></td>
                                 <td>{{$destination->location->lokasi}}</td>
@@ -53,7 +56,10 @@
                         @endforeach
                         </tbody>
                     </table>
-
+                    <!-- Pagination -->
+                    <div class="d-flex justify-content-center mt-3">
+                        {!! $destinations->links() !!}
+                    </div> 
                 </div>
             </div>
         </div>
@@ -66,10 +72,6 @@
         @csrf
     </form>
     <script>
-        $('#dtDestinasi').DataTable({
-            "responsive": true,
-        });
-
         function notificationBeforeDelete(event, el) {
             event.preventDefault();
             if (confirm('Apakah anda yakin akan menghapus data ? ')) {

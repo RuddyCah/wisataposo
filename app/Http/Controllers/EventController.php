@@ -16,7 +16,7 @@ class EventController extends Controller
     public function index()
     {
         //ambil data kategori dari database
-        $events = Event::all();
+        $events = Event::select('*')->paginate(5);
 
         //return view ke resources/views/admin/kategori/index.blade.php
         return view(

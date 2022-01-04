@@ -15,7 +15,7 @@ class LocationController extends Controller
     public function index()
     {
         //ambil data dari tabel lokasi
-        $locations = Location::all();
+        $locations = Location::select('*')->paginate(5);
 
         //return ke views/admin/lokasi/index.blade.php
         return view(

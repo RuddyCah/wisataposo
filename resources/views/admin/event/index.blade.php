@@ -21,7 +21,9 @@
                             <p>{{ $message }}</p>
                         </div>
                     @endif
-
+                    @php
+                        $count = ($events->currentPage() - 1) * $events->perPage() + 1 ;
+                    @endphp
                     <table class="table table-hover table-bordered table-stripped" id="dtEvent">
                         <thead>
                         <tr>
@@ -36,7 +38,7 @@
                         <tbody>
                         @foreach($events as $key => $event)
                             <tr>
-                                <td>{{$key+1}}</td>
+                                <td>{{$count++}}</td>
                                 <td>{{$event->nama_event}}</td>
                                 <td>{{$event->lokasi_id}}</td>
                                 <td>{{$event->tanggal}}</td>
@@ -53,7 +55,10 @@
                         @endforeach
                         </tbody>
                     </table>
-
+                    <!-- Pagination -->
+                    <div class="d-flex justify-content-center mt-3">
+                        {!! $events->links() !!}
+                    </div> 
                 </div>
             </div>
         </div>

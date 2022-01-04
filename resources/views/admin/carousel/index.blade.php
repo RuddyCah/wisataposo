@@ -31,9 +31,12 @@
                         </tr>
                         </thead>
                         <tbody>
+                        @php
+                            $count = ($carousels->currentPage() - 1) * $carousels->perPage() + 1 ;
+                        @endphp
                         @foreach($carousels as $key => $carousel)
                             <tr>
-                                <td>{{$key+1}}</td>
+                                <td>{{ $count++ }}</td>
                                 <td><img src="/image/{{ $carousel->image }}" width="100px"></td>
                                 <td>
                                     <a href="{{route('carousels.edit', $carousel)}}" class="btn btn-primary btn-xs">
@@ -47,7 +50,10 @@
                         @endforeach
                         </tbody>
                     </table>
-
+                    <!-- Pagination -->
+                    <div class="d-flex justify-content-center mt-3">
+                        {!! $carousels->links() !!}
+                    </div> 
                 </div>
             </div>
         </div>

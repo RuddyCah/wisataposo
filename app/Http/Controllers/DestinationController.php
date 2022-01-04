@@ -17,7 +17,9 @@ class DestinationController extends Controller
     public function index()
     {
         //ambil semua data destinasi dari db
-        $destinations = Destination::all();
+        $destinations = Destination::select('*')->paginate(5);
+
+        // return $destinations;
 
         //return views/admin/destinasi/index.blade.php
         return view(

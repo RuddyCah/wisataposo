@@ -15,7 +15,7 @@ class CategoryController extends Controller
     public function index()
     {
         //ambil data kategori dari database
-        $categories = Category::all();
+        $categories = Category::select('*')->paginate(5);
 
         //return view ke resources/views/admin/kategori/index.blade.php
         return view(

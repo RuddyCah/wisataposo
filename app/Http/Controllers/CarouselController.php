@@ -15,7 +15,7 @@ class CarouselController extends Controller
     public function index()
     {
         //Ambil data Carousel dari tabel carousels di database, simpan di variabel bernama $carousels
-        $carousels = Carousel::all();
+        $carousels = Carousel::select('*')->paginate(5);
 
         //Return ke view tujuan
         return view(

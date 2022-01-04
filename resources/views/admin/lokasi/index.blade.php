@@ -31,9 +31,12 @@
                         </tr>
                         </thead>
                         <tbody>
+                        @php
+                            $count = ($locations->currentPage() - 1) * $locations->perPage() + 1 ;
+                        @endphp
                         @foreach($locations as $key => $location)
                             <tr>
-                                <td>{{$key+1}}</td>
+                                <td>{{$count++}}</td>
                                 <td>{{$location->lokasi}}</td>
                                 <td>
                                     <a href="{{route('lokasi.edit', $location)}}" class="btn btn-primary btn-xs">
@@ -47,7 +50,10 @@
                         @endforeach
                         </tbody>
                     </table>
-
+                    <!-- Pagination -->
+                    <div class="d-flex justify-content-center mt-3">
+                        {!! $locations->links() !!}
+                    </div> 
                 </div>
             </div>
         </div>
