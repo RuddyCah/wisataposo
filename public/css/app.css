@@ -188,11 +188,11 @@ nav ul li a:hover,
 /* END FORM CARI EVENT */
 
 /* START DESTINASI PILIHAN */
-.destinasi-pilihan a{
+#destinasi-pilihan a{
     text-decoration: none;
 }
 
-.destinasi-pilihan .card{
+.zoom-hovered .card{
     border-radius: 4px;
     background: #fff;
     box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
@@ -201,20 +201,25 @@ nav ul li a:hover,
     cursor: pointer;
 }
 
-.destinasi-pilihan .card:hover{
+.zoom-hovered .card:hover{
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 }
 
-.destinasi-pilihan .card .card-body img{
+#destinasi-pilihan .card .card-body img,
+#informasi-umum .card .card-body img{
     height: 15rem;
 }
 
-.destinasi-pilihan .card-footer:last-child {
+#destinasi-pilihan .card-footer:last-child,
+#informasi-umum .card-footer:last-child,
+#semua-kategori .card-footer:last-child {
     border-radius: 0!important;
 }
 
-.destinasi-pilihan .card-footer {
+#destinasi-pilihan .card-footer,
+#informasi-umum .card-footer,
+#semua-kategori .card-footer {
     padding: 0!important;
     background: rgba(0, 0, 0, 0.7);    /*  70% opaque green */ 
     height: 4rem;
@@ -223,7 +228,9 @@ nav ul li a:hover,
     align-items: center;
 }
 
-.destinasi-pilihan .card-img-overlay {
+#destinasi-pilihan .card-img-overlay,
+#informasi-umum .card-img-overlay,
+#semua-kategori .card-img-overlay{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;

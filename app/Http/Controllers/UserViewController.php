@@ -22,8 +22,8 @@ class UserViewController extends Controller
     {
         //ambil data dari tabel lokasi
         $carousels = Carousel::all();
-        $destinations = Destination::all(); 
-        $categories = Category::all();
+        $destinations = Destination::select('*')->limit(10)->get(); 
+        $categories = Category::select('*')->limit(10)->get();
 
         //return ke views/welcome.blade.php
         return view(
@@ -119,6 +119,19 @@ class UserViewController extends Controller
             'user.ideliburan',
             [
                 'destinations' => $destinations,
+                'carousels' => $carousels
+            ]
+        );
+    }
+
+    public function SemuaKategori(){
+        $carousels = Carousel::all();
+        $categories = Category::all();
+
+        return view(
+            'user.kategori',
+            [
+                'categories' => $categories,
                 'carousels' => $carousels
             ]
         );

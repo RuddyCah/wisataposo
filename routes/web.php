@@ -18,6 +18,7 @@ Route::post('/events', [UserViewController::class, 'event']);
 Route::get('/info-umum', [UserViewController::class, 'informasi']); 
 Route::get('/pencarian', [UserViewController::class, 'HasilPencarian']); 
 Route::get('/ide-liburan', [UserViewController::class, 'IdeLiburan']); 
+Route::get('/lihat-kategori', [UserViewController::class, 'SemuaKategori']); 
 
 //Start Authenticated Routes
 // Routes untuk admin

@@ -36,7 +36,7 @@
       <hr class="divider mt-0 mb-5">
       
 
-      <!-- START DESTINASI PILIHAN -->
+      <!-- START INFORMASI UMUM -->
       <h2 class="font-weight-bold mb-0 pb-5 text-center">Informasi mengenai Kabupaten Poso</h2>
 
       @php
@@ -46,7 +46,7 @@
       @foreach ($informations as $key => $information)
         <!-- GANTI ROW TIAP 5 KOLOM -->
         @if ($count%5 == 1)
-          <div class="row destinasi-pilihan pb-5 mb-4">
+          <div class="row zoom-hovered pb-5 mb-4" id="informasi-umum">
         @endif
           <div class="col-lg-2 col-md-6 mb-4 mb-lg-0 mx-auto">
             {{-- <div class="row"> --}}
@@ -77,7 +77,7 @@
       @if ($count % 5 != 1)
         </div>
       @endif
-      <!-- END DESTINASI PILIHAN -->
+      <!-- END INFORMASI UMUM -->
 
       <hr class="divider">
     </div>

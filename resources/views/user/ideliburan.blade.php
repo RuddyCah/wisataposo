@@ -48,7 +48,7 @@
         @foreach ($destinations as $key => $destination)
         <!-- GANTI ROW TIAP 4 KOLOM -->
         @if ($count%5 == 1)
-            <div class="row destinasi-pilihan pb-5 mb-4">
+            <div class="row zoom-hovered pb-5 mb-4" id="destinasi-pilihan">
         @endif
             <div class="col-lg-2 col-md-6 mb-4 mb-lg-0 mx-auto">
             {{-- <div class="row"> --}}
@@ -128,7 +128,7 @@
         </h2>
 
         <!-- GANTI ROW TIAP 4 KOLOM -->
-        <div class="row destinasi-pilihan pb-5 mb-4">
+        <div class="row zoom-hovered pb-5 mb-4">
             <div class="col-lg-4 mb-4 mb-lg-0 mx-auto">
                 <!-- Card-->
                 <div class="card shadow-sm border-0 rounded p-0">
@@ -181,7 +181,7 @@
                 </div>
             </div>
         </div>
-        <div class="row destinasi-pilihan pb-5 mb-4">
+        <div class="row zoom-hovered pb-5 mb-4">
             <div class="col-lg-4 mb-4 mb-lg-0 mx-auto">
                 <!-- Card-->
                 <div class="card shadow-sm border-0 rounded p-0">
