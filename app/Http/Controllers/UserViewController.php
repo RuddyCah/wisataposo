@@ -137,4 +137,24 @@ class UserViewController extends Controller
         );
     }
 
+    public function DestinasiWisata(){
+        $carousels = Carousel::all();
+        $destinations = Destination::all();
+        $popularDestinations = Destination::select('*')
+                                            ->orderBy('total_views', 'desc')
+                                            ->limit(10)
+                                            ->get();
+        $categories = Category::all();
+
+        return view(
+            'user.destinasiwisata',
+            [
+                'destinations' => $destinations,
+                'carousels' => $carousels,
+                'categories' => $categories,
+                'popularDestinations' => $popularDestinations
+            ]
+        );
+    }
+
 }

@@ -167,7 +167,7 @@
     <!-- START LIHAT SEMUA -->
     <div class="row d-flex justify-content-center pb-5 pt-3">
       <div class="col-4 d-flex justify-content-center">
-        <button id="btnLihatSemuaWisata" class="btn btn-primary">Lihat Semua Wisata</button>
+        <a href="{{ url('/destinasi-wisata') }}" type="button" id="btnLihatSemuaWisata" class="btn btn-primary">Lihat Semua Wisata</a>
       </div>
     </div>
     <!-- END LIHAT SEMUA -->

@@ -51,13 +51,18 @@
         @endif
                 <div class="col-lg-3 mb-4 mb-lg-0">
                     <!-- Card-->
-                    <div class="card shadow-sm border-0 rounded p-0">
+                    <div class="card shadow-sm border-0 p-0">
                         <a href="#">
                             <div class="card-body p-0">
-                            <img src="image/{{ $category->gambar }}" alt="" class="w-100 card-img-top" style="height: 22rem;"/>
-                                <div class="card-img-overlay p-0">
+                                <img src="image/{{ $category->gambar }}" alt="" class="w-100 card-img-top" style="height: 22rem; border-radius:1rem;"/>
+                                {{-- <div class="card-img-overlay p-0">
                                     <div class="card-footer">
                                     <h6 class="text-light text-center">{{ $category->kategori }}</h6>
+                                    </div>
+                                </div> --}}
+                                <div class="p-0">
+                                    <div class="card-footer bg-transparent">
+                                        <h6 class="text-dark text-center" style="font-weight: bold; font-size: 11px;">{{ $category->kategori }}</h6>
                                     </div>
                                 </div>
                             </div>

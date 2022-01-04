@@ -19,6 +19,7 @@ Route::get('/info-umum', [UserViewController::class, 'informasi']);
 Route::get('/pencarian', [UserViewController::class, 'HasilPencarian']); 
 Route::get('/ide-liburan', [UserViewController::class, 'IdeLiburan']); 
 Route::get('/lihat-kategori', [UserViewController::class, 'SemuaKategori']); 
+Route::get('/destinasi-wisata', [UserViewController::class, 'DestinasiWisata']); 
 
 //Start Authenticated Routes
 // Routes untuk admin
