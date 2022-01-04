@@ -157,4 +157,19 @@ class UserViewController extends Controller
         );
     }
 
+    public function DestinasiByID(Destination $destination){
+        $article = $destination;
+        $flag = 'Destinasi Wisata'; //Flag untuk nampilin breadcrumb
+
+        // return $article;
+
+        return view(
+            'user.artikel', 
+            [
+                'article' => $article,
+                'flag' => $flag
+            ]
+        );
+    }
+
 }

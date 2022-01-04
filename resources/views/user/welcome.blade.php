@@ -65,7 +65,7 @@
           {{-- <div class="row"> --}}
             <!-- Card-->
             <div class="card shadow-sm border-0 rounded p-0">
-              <a href="#">
+              <a href= "{{ route('lihat-destinasi', $destination->id) }}">
                 <div class="card-body p-0">
                   <img src="image/{{ $destination->gambar }}" alt="" class="w-100 card-img-top"/>                        
 

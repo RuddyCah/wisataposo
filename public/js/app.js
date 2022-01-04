@@ -17,6 +17,12 @@
     document.getElementById("logoPoso").style.height = "75px";
   } 
   else{
+    if(window.scrollY > 80){
+      document.getElementById("menu-atas").classList.remove("bg-transparent");
+      document.getElementById("logoPoso").style.width = "100px";
+      document.getElementById("logoPoso").style.height = "75px";
+    }
+
     window.onscroll = function() {scrollFunction()};
 
     function scrollFunction() {

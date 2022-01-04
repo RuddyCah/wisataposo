@@ -20,6 +20,7 @@ Route::get('/pencarian', [UserViewController::class, 'HasilPencarian']);
 Route::get('/ide-liburan', [UserViewController::class, 'IdeLiburan']); 
 Route::get('/lihat-kategori', [UserViewController::class, 'SemuaKategori']); 
 Route::get('/destinasi-wisata', [UserViewController::class, 'DestinasiWisata']); 
+Route::get('/destinasi-wisata/{destination}', [UserViewController::class, 'DestinasiByID'])->name('lihat-destinasi'); 
 
 //Start Authenticated Routes
 // Routes untuk admin
