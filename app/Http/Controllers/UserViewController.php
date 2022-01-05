@@ -45,6 +45,8 @@ class UserViewController extends Controller
         //Ambil event berdasarkan lokasi id
         $event = Event::select('*')->whereIn('lokasi_id', $location_id)->get();
 
+        // return $event;
+
         return view(
             'user.events',
             [

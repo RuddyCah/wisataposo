@@ -36,32 +36,32 @@
       <hr class="divider mt-0">
 
       <!-- START TABLE EVENT -->
-      {{-- <div class="row left-line">
-        <div class="col-6">
-          <h2 class="font-weight-bold mb-2 pb-3 mb-5"><span>Event di {{$searchInput}}</span></h2>
-        </div>
-      </div> --}}
-      <h2 class="font-weight-bold mb-2 pb-5 text-center">Event di {{$searchInput}}</h2>
-      <table id="tabel-event" class="table table-striped table-bordered datatable" style="width:100%">
-        <thead>
-            <tr>
-              <th>Nama Event</th>
-              <th>Lokasi</th>
-              <th>Tanggal</th>
-              <th>Info</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($events as $key => $event)
-            <tr>
-              <td>{{$event->nama_event}}</td>
-              <td>{{$event->location->lokasi}}</td>
-              <td>{{$event->tanggal}}</td>
-              <td>{{$event->info}}</td>
-            </tr>
-            @endforeach
-        </tbody>
-      </table>
+      
+      @if (count($events) > 0)
+        <h2 class="font-weight-bold mb-2 pb-5 text-center">Event di {{$searchInput}}</h2>
+        <table id="tabel-event" class="table table-striped table-bordered datatable" style="width:100%">
+          <thead>
+              <tr>
+                <th>Nama Event</th>
+                <th>Lokasi</th>
+                <th>Tanggal</th>
+                <th>Info</th>
+              </tr>
+          </thead>
+          <tbody>
+              @foreach ($events as $key => $event)
+              <tr>
+                <td>{{$event->nama_event}}</td>
+                <td>{{$event->location->lokasi}}</td>
+                <td>{{$event->tanggal}}</td>
+                <td>{{$event->info}}</td>
+              </tr>
+              @endforeach
+          </tbody>
+        </table>
+      @else
+        <h4 class="text-center">Tidak Ada Event di {{$searchInput}}</h4>
+      @endif
 
 
       <hr class="divider">
