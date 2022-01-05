@@ -40,7 +40,7 @@
                             <tr>
                                 <td>{{$count++}}</td>
                                 <td>{{$event->nama_event}}</td>
-                                <td>{{$event->lokasi_id}}</td>
+                                <td>{{$event->location->lokasi}}</td>
                                 <td>{{$event->tanggal}}</td>
                                 <td>{{$event->info}}</td>
                                 <td>

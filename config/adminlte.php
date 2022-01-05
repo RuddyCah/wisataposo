@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'Login - Admin Wisata Poso',
     'title_prefix' => '',
     'title_postfix' => '',
 
