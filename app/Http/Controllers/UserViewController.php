@@ -193,4 +193,17 @@ class UserViewController extends Controller
         );
     }
 
+    public function LihatInformasi(Information $information){
+        $flag = 'Informasi Umum';
+        $article = $information;
+
+        return view(
+            'user.artikel', 
+            [
+                'article' => $article,
+                'flag' => $flag
+            ]
+        );
+    }
+
 }

@@ -22,6 +22,7 @@ Route::get('/lihat-kategori', [UserViewController::class, 'SemuaKategori']);
 Route::get('/destinasi-wisata', [UserViewController::class, 'DestinasiWisata']); 
 Route::get('/destinasi-wisata/{destination}', [UserViewController::class, 'DestinasiByID'])->name('lihat-destinasi'); 
 Route::get('/kategori-wisata/{category}', [UserViewController::class, 'DestinasiByCategory'])->name('kategori-wisata'); 
+Route::get('/info-umum/{information}', [UserViewController::class, 'LihatInformasi'])->name('lihat-informasi'); 
 
 //Start Authenticated Routes
 // Routes untuk admin

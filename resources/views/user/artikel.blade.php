@@ -22,6 +22,9 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+                @if ($flag == 'Informasi Umum')
+                    <li class="breadcrumb-item"><a href="{{url('/info-umum')}}">Informasi Umum</a></li>
+                @endif
                 <li class="breadcrumb-item active" aria-current="page">{{ $article->judul }}</li>
             </ol>
         </nav>
