@@ -7,9 +7,9 @@
                     <div class="col-sm-6 col-md-3 item">
                         <h3>Menu</h3>
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Tours</a></li>
-                            <li><a href="#">Category</a></li>
+                            <li><a href="{{url('/')}}">Home</a></li>
+                            <li><a href="{{ url('/ide-liburan') }}">Tours</a></li>
+                            <li><a href="{{ url('/lihat-kategori') }}">Category</a></li>
                             <li><a href="#">About Us</a></li>
                         </ul>
                     </div>

@@ -206,4 +206,28 @@ class UserViewController extends Controller
         );
     }
 
+    //Lihat Artikel dari hasil pencarian
+    public function LihatArtikel($judul){
+        $flag = 'Hasil Pencarian';
+        //Cari apakah artikel yang mau dilihat didapat dari data Destinasi atau Informasi Umum
+        $destination = Destination::select('*')->where('judul', '=', $judul)->first();
+        $information = Information::select('judul','gambar','konten')->where('judul', '=', $judul)->first();
+
+        // return $information;
+        if($destination == null){
+            $article = $information;
+        }
+        else{
+            $article = $destination;
+        }
+        // return $article;
+        return view(
+            'user.artikel', 
+            [
+                'article' => $article,
+                'flag' => $flag
+            ]
+        );
+    }
+
 }

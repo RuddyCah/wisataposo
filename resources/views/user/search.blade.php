@@ -27,18 +27,18 @@
             @foreach ($results as $key => $result)
                 <div class="row mt-5">
                     <div class="col-sm-4">
-                        <a href="#" class="">
+                        <a href="{{ route('lihat-artikel', $result->judul) }}" class="">
                             <img src="image/{{$result->gambar}}" class="img-responsive">
                         </a>
                     </div>
                     <div class="col-sm-8 mt-4">
-                        <a href="#" style="text-decoration: none; color: rgb(70, 66, 66)">
+                        <a href="{{ route('lihat-artikel', $result->judul) }}" style="text-decoration: none; color: rgb(70, 66, 66)">
                             <h3 class="title">{{ $result->judul }}</h3>
                         </a>
                         <p style="text-align: justify">
                             {{ \Illuminate\Support\Str::limit(strip_tags($result->konten), 400) }}
                         </p> <!-- strip_tags untuk hapus tag html -->
-                        <a href="#">Baca selengkapnya...</a>
+                        <a href="{{ route('lihat-artikel', $result->judul) }}">Baca selengkapnya...</a>
                     </div>
                 </div>
                 <hr>
