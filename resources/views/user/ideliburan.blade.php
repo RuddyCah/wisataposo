@@ -54,7 +54,7 @@
             {{-- <div class="row"> --}}
                 <!-- Card-->
                 <div class="card shadow-sm border-0 rounded p-0">
-                <a href="#">
+                <a href="{{ route('lihat-destinasi', $destination->id) }}">
                     <div class="card-body p-0">
                     <img src="image/{{ $destination->gambar }}" alt="" class="w-100 card-img-top"/>                        
 
@@ -83,7 +83,7 @@
         <!-- START LIHAT SEMUA -->
         <div class="row d-flex justify-content-center pb-5">
             <div class="col-4 d-flex justify-content-center">
-                <a href="" id="btnLihatSemuaIdeLiburan" type="button" class="btn btn-primary">
+                <a href="{{ url('/destinasi-wisata') }}" id="btnLihatSemuaIdeLiburan" type="button" class="btn btn-primary">
                     Lihat Semua Ide Liburan
                 </a>
             </div>

@@ -108,7 +108,7 @@
           @foreach ($categories as $key => $category)
             <div class="col-lg-1 col-md-6" style="width: 12.499999995%;">
               <div class="card border-0 rounded p-0">
-                <a href="#">
+                <a href="{{ route('kategori-wisata', $category->id) }}">
                   <div class="card-body p-0">
                     <img src="image/{{ $category->gambar }}" alt="" class="card-img-top"/>
                     <div class="p-0">

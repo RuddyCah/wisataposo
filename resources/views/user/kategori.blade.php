@@ -52,7 +52,7 @@
                 <div class="col-lg-3 mb-4 mb-lg-0">
                     <!-- Card-->
                     <div class="card shadow-sm border-0 p-0">
-                        <a href="#">
+                        <a href="{{ route('kategori-wisata', $category->id) }}">
                             <div class="card-body p-0">
                                 <img src="image/{{ $category->gambar }}" alt="" class="w-100 card-img-top" style="height: 22rem; border-radius:1rem;"/>
                                 {{-- <div class="card-img-overlay p-0">

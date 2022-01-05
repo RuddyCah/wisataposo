@@ -22,7 +22,8 @@ class UserViewController extends Controller
     {
         //ambil data dari tabel lokasi
         $carousels = Carousel::all();
-        $destinations = Destination::select('*')->limit(10)->get(); 
+        //destinasi pilihan diambil 10 yang paling populer
+        $destinations = Destination::select('*')->orderBy('total_views','desc')->limit(10)->get(); 
         $categories = Category::select('*')->limit(10)->get();
 
         //return ke views/welcome.blade.php
@@ -141,7 +142,7 @@ class UserViewController extends Controller
 
     public function DestinasiWisata(){
         $carousels = Carousel::all();
-        $destinations = Destination::all();
+        $destinations = Destination::select('*')->paginate(10);
         $popularDestinations = Destination::select('*')
                                             ->orderBy('total_views', 'desc')
                                             ->limit(10)
@@ -163,13 +164,31 @@ class UserViewController extends Controller
         $article = $destination;
         $flag = 'Destinasi Wisata'; //Flag untuk nampilin breadcrumb
 
-        // return $article;
+        //Jika destinasi di klik, Update kolom total_views + 1 untuk set destinasi populer
+        $destination->total_views += 1;
+        $destination->save();
 
         return view(
             'user.artikel', 
             [
                 'article' => $article,
                 'flag' => $flag
+            ]
+        );
+    }
+
+    public function DestinasiByCategory(Category $category){
+
+        $destinations = Destination::select('*')
+                                    ->where('kategori_id','=', $category->id)
+                                    ->orderBy('total_views', 'desc')
+                                    ->paginate(5);
+
+        return view(
+            'user.destinasiByKategori', 
+            [
+                'category' => $category,
+                'destinations' => $destinations
             ]
         );
     }

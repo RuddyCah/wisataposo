@@ -54,7 +54,7 @@
             {{-- <div class="row"> --}}
                 <!-- Card-->
                 <div class="card shadow-sm border-0 rounded p-0">
-                <a href="#">
+                <a href="{{ route('lihat-destinasi', $destination->id) }}">
                     <div class="card-body p-0">
                     <img src="image/{{ $destination->gambar }}" alt="" class="w-100 card-img-top"/>                        
 
@@ -79,15 +79,19 @@
         @if ($count % 5 != 1)
         </div>
         @endif
+        <!-- Pagination -->
+        <div class="d-flex justify-content-center">
+            {!! $destinations->links() !!}
+        </div> 
 
         <!-- START LIHAT SEMUA -->
-        <div class="row d-flex justify-content-center pb-5">
+        {{-- <div class="row d-flex justify-content-center pb-5">
             <div class="col-4 d-flex justify-content-center">
                 <a href="" id="btnLihatSemuaIdeLiburan" type="button" class="btn btn-primary">
                     Lihat Semua Ide Liburan
                 </a>
             </div>
-        </div>
+        </div> --}}
         <!-- END LIHAT SEMUA -->
         <!-- END DESTINASI PILIHAN -->
 
@@ -109,7 +113,7 @@
                     @foreach ($categories as $key => $category)
                     <div class="col-lg-1 col-md-6" style="width: 12.499999995%;">
                         <div class="card border-0 rounded p-0">
-                            <a href="#">
+                            <a href="{{ route('kategori-wisata', $category->id) }}">
                                 <div class="card-body p-0">
                                     <img src="image/{{ $category->gambar }}" alt="" class="card-img-top"/>
                                     <div class="p-0">
@@ -156,7 +160,7 @@
             {{-- <div class="row"> --}}
                 <!-- Card-->
                 <div class="card shadow-sm border-0 rounded p-0">
-                <a href="#">
+                <a href="{{ route('lihat-destinasi', $popularDestination->id) }}">
                     <div class="card-body p-0">
                         <img src="image/{{ $popularDestination->gambar }}" alt="" class="w-100 card-img-top"/>                        
 

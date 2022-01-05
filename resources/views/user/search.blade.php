@@ -21,7 +21,7 @@
       <!-- END SEARCH FORM -->
       
 
-      <!-- START SEARCH RESULT -->
+        <!-- START SEARCH RESULT -->
       
         <div id="hasil-pencarian" class="pb-5">
             @foreach ($results as $key => $result)
@@ -50,7 +50,7 @@
             </div>       
         </div>
         
-      <!-- END SEARCH RESULT -->
+        <!-- END SEARCH RESULT -->
     </div>
 @endsection
       
